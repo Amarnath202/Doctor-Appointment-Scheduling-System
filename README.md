@@ -102,7 +102,7 @@ Server Software: 	`Apache/2.4.39 (Win64) PHP/7.3.5`
 
 MySQL Version: 		`5.7.26`
 
-Demo video: [https://youtu.be/mAWHYAHmit4](https://drive.google.com/file/d/1OUC-EZ7VmRoJdt3el9DBcRcd3XYkhyJT/view?usp=sharing)
+Demo video: https://drive.google.com/file/d/1OUC-EZ7VmRoJdt3el9DBcRcd3XYkhyJT/view?usp=sharing
 
 
 
