@@ -1,0 +1,120 @@
+/* Main Container */
+.container {
+   
+    grid-template-columns: 1fr 4fr; /* Sidebar takes 1 part, main content takes 4 parts */
+    gap: 10px;
+}
+
+/* Sidebar Menu */
+.menu {
+    grid-template-rows: auto auto; /* Profile at top, menu items below */
+    align-items: start;
+    padding: 20px;
+    border-right: 1.5px solid rgb(235, 235, 235);
+    box-shadow: 0 0px 0px 2px rgba(240, 240, 240, 0.3);
+    background-color: #311ed8;
+}
+
+/* Profile Section */
+.profile-container {
+ 
+    padding-bottom: 15px;
+    border-bottom: 1.5px solid rgb(235, 235, 235);
+    color: #edeff5;
+}
+
+.profile-title {
+    font-weight: 500;
+    color: #edeff5;
+    font-size: 22px;
+    margin: 0;
+}
+
+.profile-subtitle {
+    font-weight: 300;
+    color: #8492a6;
+    font-size: 15px;
+    margin: 0;
+}
+
+/* Menu Items in a Row */
+.menu-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* Each menu item takes equal width */
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+    
+}
+
+.menu-container a {
+    text-decoration: none;
+    color: #161c2d;
+    font-weight: 500;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    background-color: #311ed8;
+    transition: 0.3s ease;
+}
+
+.menu-container a:hover {
+    background-color: #e6e6e6;
+}
+
+/* Logout Button */
+.logout-btn {
+    margin-top: 20px;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    background-color: red;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+}
+
+.logout-btn:hover {
+    background-color: darkred;
+}
+
+/* Main Dashboard Content */
+.dash-body {
+    width: 100%;
+    padding: 20px;
+    background-color: #f1f1f1;
+}
+
+/* Search Bar Styling */
+.header-search {
+    display: flex;
+    justify-content: center;
+}
+
+.header-searchbar {
+    width: 75%;
+    background-color: rgba(255, 255, 255, 0.705);
+    border: 0.5px solid rgba(190, 190, 190, 0.884);
+    padding: 8px;
+    border-radius: 5px;
+}
+
+/* Appointments and Sessions */
+.add-doc-form-container {
+    padding: 25px;
+    margin-top: 30px;
+}
+
+/* Headings */
+.heading-main12 {
+    font-weight: 500;
+    font-size: 25px;
+}
+
+.heading-sub12 {
+    font-weight: 500;
+    font-size: 20px;
+    text-align: right;
+}

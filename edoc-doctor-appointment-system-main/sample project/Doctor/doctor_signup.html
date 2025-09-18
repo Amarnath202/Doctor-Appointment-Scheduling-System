@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Sign Up</title>
+    <style>
+        /* General Body Styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background:url(../images/img16.jpg);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: #fff;
+        }
+
+        /* Signup Container */
+        .signup-container {
+            padding: 30px;
+            border-radius: 15px;
+            width: auto
+            max-width 450px;
+        }
+
+        h2 {
+            color: #333;
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        /* Input Fields Styling */
+        .input-field {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            color: #333;
+            background: #f8f8f8;
+            transition: all 0.3s ease;
+        }
+
+        /* Input Fields Focus Effect */
+        .input-field:focus {
+            border-color: #2575fc;
+            background: #fff;
+            box-shadow: 0 0 8px rgba(37, 117, 252, 0.5);
+            outline: none;
+        }
+
+        /* Button Styling */
+        button {
+            width:auto;
+            padding: 12px;
+            
+            background-color: #2575fc;
+            color: rgb(233, 234, 237);
+            border: none;
+            border-radius: 8px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #1e60cc;
+            transform: translateY(-2px);
+        }
+
+        /* Link Styling */
+        .link {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.95rem;
+        }
+
+        .link a {
+            color: #2575fc;
+            text-decoration: none;
+            font-weight: 600;
+            transition: text-decoration 0.3s ease;
+        }
+
+        .link a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 480px) {
+            .signup-container {
+                padding: 20px;
+                width: 90%;
+            }
+
+            h2 {
+                font-size: 1.8rem;
+            }
+
+            .input-field {
+                font-size: 1rem;
+                padding: 10px;
+            }
+
+            button {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="signup-container">
+        <h2>Doctor Sign Up</h2>
+        <form action="/submit_signup.php" method="POST">
+
+            <input type="text" class="input-field" name="name" placeholder="Full Name" required><br>
+
+            <input type="text" class="input-field" name="doctor_id" placeholder="Doctor ID" required><br>
+
+            <input type="text" class="input-field" name="hospital" placeholder="Hospital Name" required><br>
+
+            <input type="text" class="input-field" name="specialization" placeholder="Specialization" required><br>
+
+            <input type="text" class="input-field" name="work_experience" placeholder="Work Experience (Years)" required><br>
+
+            <input type="email" class="input-field" name="email" placeholder="Email Address" required><br>
+
+            <input type="text" class="input-field" name="location" placeholder="Location" required><br>
+
+            <button type="submit">Sign Up</button>
+        </form>
+
+        <div class="link">
+            <p>Already have an account? <a href="login_doctor.php">Login here</a></p>
+        </div>
+    </div>
+
+</body>
+</html>

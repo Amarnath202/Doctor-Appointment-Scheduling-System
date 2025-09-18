@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background: url("images/img2.jpg") no-repeat center center/cover;
+            color: white;
+            margin: 0;
+            padding: 0;
+            position: relative;
+            overflow-x: hidden;
+            transition: background-color 0.3s ease;
+        }
+
+        /* Location Dropdown Button */
+        .location-container {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            z-index: 9999;
+        }
+
+        .location-btn {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 1rem;
+            border-radius: 25px;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+
+        .location-btn:hover {
+            background-color: #0056b3;
+            transform: translateY(-3px);
+        }
+
+        /* Dropdown Menu */
+        .dropdown {
+            display: none;
+            position: absolute;
+            top: 50px;
+            left: 0;
+            background: white;
+            color: black;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            width: 180px;
+            z-index: 1000;
+        }
+
+        .dropdown a {
+            display: block;
+            padding: 10px;
+            text-decoration: none;
+            color: black;
+            transition: background 0.3s ease, padding 0.2s ease;
+        }
+
+        .dropdown a:hover {
+            background: #f1f1f1;
+            padding-left: 15px;
+        }
+
+        /* Main Layout */
+        .main-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            min-height: 100vh;
+            padding: 20px;
+            gap: 20px;
+            animation: fadeIn 1.5s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* About Section */
+        .about-container {
+            flex: 1;
+            max-width: 50%;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 40px;
+            border-radius: 25px;
+            text-align: center;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+            transition: transform 0.3s ease;
+        }
+
+        .about-container:hover {
+            transform: scale(1.05);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+        }
+
+        .about-box {
+            background: rgba(255, 255, 255, 0.8);
+            color: black;
+            padding: 40px;
+            border-radius: 20px;
+            max-width: 500px;
+            margin: auto;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            transition: box-shadow 0.3s ease-in-out;
+        }
+
+        .about-box:hover {
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            font-size: 2.5rem;
+            color: #007BFF;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+            transition: color 0.3s ease-in-out;
+        }
+
+        h1:hover {
+            color: #0056b3;
+        }
+
+        p {
+            font-size: 1.2rem;
+            line-height: 1.5;
+            margin: 20px 0;
+        }
+
+        /* Login Button */
+        .btn {
+            width: 100%;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 12px;
+            font-size: 1rem;
+            border-radius: 25px;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #45a049;
+            transform: translateY(-3px);
+        }
+
+        .btn:active {
+            transform: translateY(1px);
+        }
+
+        /* Image Section */
+        .image-section {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            max-width: 40%;
+        }
+
+        .image-section img {
+            width: 100%;
+            max-width: 250px;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .image-section img:hover {
+            transform: scale(1.1);
+        }
+
+        /* Section Header Styling */
+        .about-container h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            letter-spacing: 2px;
+        }
+
+        .about-container p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #fff;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Location Dropdown Button -->
+    <div class="location-container">
+        <button class="location-btn" onclick="toggleDropdown()">📍 Select Location</button>
+        <div class="dropdown" id="locationDropdown">
+            <a href="#" onclick="selectLocation('Chennai')">Chennai</a>
+            <a href="#" onclick="selectLocation('Coimbatore')">Coimbatore</a>
+            <a href="#" onclick="selectLocation('Bangalore')">Bangalore</a>
+            <a href="#" onclick="selectLocation('Hyderabad')">Hyderabad</a>
+        </div>
+    </div>
+
+    <!-- Main Wrapper: About Section + Images -->
+    <div class="main-wrapper">
+        
+        <!-- About Section -->
+        <div class="about-container">
+            <div class="about-box">
+                <h1>About Our Health Appointment System</h1>
+                <p>Our health appointment system provides seamless booking and management of doctor appointments. Patients can easily schedule, reschedule, and cancel appointments while doctors manage their availability efficiently.</p>
+                <p>We bridge the gap between healthcare providers and patients by offering a user-friendly interface, secure login for doctors and patients, and real-time appointment tracking.</p>
+                <p>Our system ensures a hassle-free experience, reducing waiting times and enhancing patient care.</p>
+                <button class="btn" onclick="location.href='login.html'">Login-IN/Sign-Up</button>
+            </div>
+        </div>
+
+        <!-- Image Section -->
+        <div class="image-section">
+            <img src="images/img6.jpg" alt="Doctor Image 1">
+            <img src="images/img4.jpg" alt="Doctor Image 2">
+            <img src="images/img5.jpg" alt="Doctor Image 3">
+        </div>
+
+    </div>
+
+    <script>
+        // Function to toggle the dropdown visibility
+        function toggleDropdown() {
+            var dropdown = document.getElementById("locationDropdown");
+            dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
+        }
+
+        // Function to handle location selection and redirect to doctors.php
+        function selectLocation(location) {
+            window.location.href = `Doctor/doctor.php?location=${encodeURIComponent(location)}`;
+        }
+
+        // Hide dropdown when clicking outside
+        document.addEventListener("click", function(event) {
+            var dropdown = document.getElementById("locationDropdown");
+            var button = document.querySelector(".location-btn");
+            if (!button.contains(event.target) && !dropdown.contains(event.target)) {
+                dropdown.style.display = "none";
+            }
+        });
+    </script>
+
+</body>
+</html>

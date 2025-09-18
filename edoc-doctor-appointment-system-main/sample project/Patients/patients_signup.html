@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Sign Up</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: url(../images/img16.jpg);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: #fff;
+        }
+
+        .signup-container {
+            padding: 30px;
+            border-radius: 15px;
+            background: rgba(0, 0, 0, 0.7);
+            max-width: 450px;
+            width: 100%;
+        }
+
+        h2 {
+            color: #fff;
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .input-field {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            color: #333;
+            background: #f8f8f8;
+            transition: all 0.3s ease;
+        }
+
+        .input-field:focus {
+            border-color: #2575fc;
+            background: #fff;
+            box-shadow: 0 0 8px rgba(37, 117, 252, 0.5);
+            outline: none;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #2575fc;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #1e60cc;
+            transform: translateY(-2px);
+        }
+
+        .link {
+            text-align: center;
+            margin-top: 15px;
+            font-size: 0.95rem;
+        }
+
+        .link a {
+            color: #2575fc;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .link a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 480px) {
+            .signup-container {
+                padding: 20px;
+                width: 90%;
+            }
+
+            h2 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="signup-container">
+        <h2>Patient Sign Up</h2>
+        <form action="submit_signup.php" method="POST">
+            <input type="text" class="input-field" name="pid" placeholder="Patient ID" required>
+            <input type="email" class="input-field" name="pemail" placeholder="Email" required>
+            <input type="text" class="input-field" name="pname" placeholder="Full Name" required>
+            <input type="password" class="input-field" name="ppassword" placeholder="Password" required>
+            <input type="text" class="input-field" name="paddress" placeholder="Address" required>
+            <input type="date" class="input-field" name="pdob" placeholder="Date of Birth" required>
+            <input type="tel" class="input-field" name="ptel" placeholder="Telephone" required>
+            <button type="submit">Sign Up</button>
+        </form>
+        <div class="link">
+            <p>Already have an account? <a href="login_doctor.php">Login here</a></p>
+        </div>
+    </div>
+</body>
+</html>

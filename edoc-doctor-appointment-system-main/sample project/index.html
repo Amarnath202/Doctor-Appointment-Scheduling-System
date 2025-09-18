@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Appointment</title>
+    <link rel="stylesheet" href="images/img2.jpg">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            background:url("images/img6.jpg");
+            color: white;
+            text-align: center;
+            overflow-x: hidden;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+            padding: 20px;
+        }
+        .header {
+            font-size: 3rem;
+            font-weight: bold;
+            animation: fadeIn 2s ease-in-out;
+        }
+        .description {
+            font-size: 1.2rem;
+            margin: 15px 0;
+            animation: slideIn 2s ease-in-out;
+        }
+        .btn {
+            padding: 15px 30px;
+            background: #FFD700;
+            color: #333;
+            font-size: 1rem;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+        .btn:hover {
+            background: #FFA500;
+        }
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(-20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes slideIn {
+            0% { opacity: 0; transform: translateX(-50px); }
+            100% { opacity: 1; transform: translateX(0); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">Welcome to Heal Tracker</div>
+        <div class="description">Access your account to manage your appointments and records.</div>
+        <button class="btn" onclick="location.href='about.html'">Get Start</button>
+    </div>
+</body>
+</html>
